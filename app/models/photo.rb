@@ -6,4 +6,6 @@ class Photo < ActiveRecord::Base
 
   has_one :room_photo
   has_one :room, through: :room_photo
+
+  mount_uploader :image, PhotoUploader
 end
