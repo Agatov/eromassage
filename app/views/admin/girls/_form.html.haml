@@ -1,0 +1,13 @@
+= simple_form_for girl, url: url, html: {class: ['form-horizontal', 'span8']} do |f|
+  = f.input :name, input_html: {class: 'span6'}
+  = f.input :age, input_html: {class: 'span6'}
+  = f.input :height, input_html: {class: 'span6'}
+  = f.input :weight, input_html: {class: 'span6'}
+  = f.input :bubs, input_html: {class: 'span6'}
+  = f.input :avatar, input_html: {class: 'span6'}
+  - if girl.avatar?
+    .avatar{style: 'padding: 10px; margin: 10px; margin-left: 170px'}
+      = image_tag girl.avatar_url(:large)
+  = f.input :about, input_html: {class: 'span6', rows: 4}
+  .form-actions.span6
+    = f.submit 'Сохранить', class: ['btn', 'btn-primary']
