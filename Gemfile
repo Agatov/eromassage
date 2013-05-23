@@ -33,7 +33,7 @@ gem 'thinking-sphinx'
 gem 'unicorn'
 gem 'omniauth'
 gem 'russian', '~> 0.6.0'
-
+gem 'flash_cookie_session'
 
 
 
