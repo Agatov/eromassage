@@ -12,6 +12,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #"/images/fallback/" + [version_name, "default.jpeg"].compact.join('_')
   #end
 
+  version :preview do
+    process :resize_to_fill => [180, 240]
+  end
+
   # Create different versions of your uploaded files:
   version :large do
     process :resize_to_fill => [128, 128]

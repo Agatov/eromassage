@@ -1,0 +1,66 @@
+.overlay
+
+
+
+.modal-wrapper
+  .olo
+    .modal-close
+      %a#close-modal{href: '#'}
+        закрыть (х)
+    .modal
+
+
+.topbar
+  .wrapper
+    .logo
+      paparam
+
+    %ul.navigation
+      %li
+        %a{href: '#'}
+          О заведении
+
+      %li
+        %a{href: '#'}
+          Девушки
+
+      %li
+        %a{href: '#'}
+          Интерьер
+
+      %li
+        %a{href: '#'}
+          Программы
+
+      %li
+        %a{href: '#'}
+          Контакты
+
+
+#intro
+  .wrapper
+    .slogan
+      Салон эротического
+      %br
+      массажа
+      %span.pink
+        "На массаж"
+      %br
+      приглашает мужчин
+      %br
+      прорекласироваться
+
+
+
+%section#girls
+  .wrapper
+    .title
+      Наши девочки
+      %small
+        они очень горячи
+
+
+
+    .girls
+      - @girls.each do |girl|
+        = render partial: 'girls/girl', locals: {girl: girl}
