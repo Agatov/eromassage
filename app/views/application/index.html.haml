@@ -64,3 +64,50 @@
     .girls
       - @girls.each do |girl|
         = render partial: 'girls/girl', locals: {girl: girl}
+
+
+
+%section#programs
+  .wrapper
+    .title
+      Программы и цены
+
+
+    .programs
+      .program
+        .title
+          1 час =
+          .price
+            1 800
+            %small
+              рублей
+
+      .program
+        .title
+          2 часа =
+          .price
+            3 200
+            %small
+              рублей
+
+      .program
+        .title
+          3 часа =
+          .price
+            4 600
+            %small
+              рублей
+
+
+#map
+
+
+%script#balloon-template{type: :template}
+  .balloon
+    .content
+      Мы находимся по адресу:
+      %br
+      улица Степана Супруна, дом 12
+      %br
+      тел. +7 495 888 88 88
+    .arrow-up
