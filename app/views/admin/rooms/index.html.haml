@@ -1,0 +1,19 @@
+%legend
+  Список
+  %a.btn{href: new_admin_room_path, style: 'float: right;'}
+    Добавить
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th
+        Название
+      %th
+        = '...'
+  %tbody
+    - @rooms.each do |room|
+      %tr
+        %td
+          = room.name
+        %td
+          = link_to 'изменить', edit_admin_room_path(room)

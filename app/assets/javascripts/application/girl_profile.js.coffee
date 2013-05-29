@@ -30,6 +30,8 @@ $ ->
 
     @map.geoObjects.add placemark
 
+    placemark.balloon.open()
+
 
   $(document).on 'click', '.preview', ->
     photo_id = $(@).attr('photo_id')
@@ -44,6 +46,20 @@ $ ->
 
 
   $('.girl .avatar').bind 'click', ->
+
+
+    $(".modal").append $(@).parent().find(".modal-template").html()
+    showFirstPhoto()
+
+    $('.overlay').show()
+
+    $('.overlay').animate {opacity: 1}, 500, ->
+      $('.modal-wrapper').show('slide', {direction: 'top'})
+
+
+  $('.modable').bind 'click', ->
+
+    console.log $(@).parent().find(".modal-template").html()
 
 
     $(".modal").append $(@).parent().find(".modal-template").html()

@@ -16,25 +16,29 @@
       paparam
 
     %ul.navigation
-      %li
+      -#%li
         %a{href: '#'}
           О заведении
 
       %li
-        %a{href: '#'}
+        %a.nav-link{href: '#', rel_id: 'girls'}
           Девушки
 
       %li
-        %a{href: '#'}
-          Интерьер
-
-      %li
-        %a{href: '#'}
+        %a.nav-link{href: '#', rel_id: 'programs'}
           Программы
 
       %li
-        %a{href: '#'}
+        %a.nav-link{href: '#', rel_id: 'rooms'}
+          Интерьер
+
+      %li
+        %a.nav-link{href: '#', rel_id: 'map'}
           Контакты
+
+      %li
+        %a.get-call{href: '#'}
+          Заказать звонок
 
 
 #intro
@@ -44,7 +48,7 @@
       %br
       массажа
       %span.pink
-        "На массаж"
+        "Мир массажа"
       %br
       приглашает мужчин
       %br
@@ -55,9 +59,10 @@
 %section#girls
   .wrapper
     .title
-      Наши девочки
+      Девушки
       %small
-        они очень горячи
+        Они такие же, как и на фото.
+
 
 
 
@@ -99,6 +104,18 @@
               рублей
 
 
+%section#rooms
+  .wrapper
+    .title
+      Интерьер
+      %small
+        У нас 8 комнат и каждая из них  неповторима.
+
+    .rooms
+      - @rooms.each do |room|
+        = render partial: 'rooms/room', locals: {room: room}
+
+
 #map
 
 
@@ -111,3 +128,12 @@
       %br
       тел. +7 495 888 88 88
     .arrow-up
+
+.request-call-dialog
+  .header-transparent
+  .arrow-up
+  .content
+    %input{type: :text, placeholder: 'Ваше имя'}
+    %input{type: :text, placeholder: 'Ваш телефон'}
+    .submit
+      Заказать звонок

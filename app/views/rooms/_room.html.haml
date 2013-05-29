@@ -1,0 +1,25 @@
+.room
+  .name
+    = room.name
+  .content.modable
+    .image
+      = image_tag room.avatar_url(:room_preview)
+    .about
+      = room.about
+
+
+
+  .modal-template
+    .header
+      .title
+        = room.name
+    .photos#girl-photos
+      - room.photos.each do |photo|
+        .photo{photo_id: photo.id}
+          = image_tag photo.image_url(:full)
+
+    .gallery
+      - room.photos.each do |photo|
+        .preview{photo_id: photo.id}
+          -#.overlay
+          = image_tag photo.image_url(:preview)
