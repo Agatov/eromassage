@@ -1,0 +1,20 @@
+#header
+  +7 (495) 882-12-42
+
+#intro
+  .slogan
+    Салон эротического
+    %br
+    массажа
+    %span.pink
+      "Мир массажа"
+    %br
+    приглашает мужчин
+    %br
+    прорекласироваться
+
+
+
+.girls
+  - @girls.each do |girl|
+    = render partial: 'girls/girl', locals: {girl: girl}

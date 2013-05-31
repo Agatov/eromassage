@@ -133,7 +133,10 @@
   .header-transparent
   .arrow-up
   .content
-    %input{type: :text, placeholder: 'Ваше имя'}
-    %input{type: :text, placeholder: 'Ваш телефон'}
-    .submit
-      Заказать звонок
+    .success
+      Мы вам скоро перезвоним!
+    %form
+      %input{type: :text, name: :username, placeholder: 'Ваше имя'}
+      %input{type: :text, name: :phone, placeholder: 'Ваш телефон'}
+      .submit#submit-order
+        Заказать звонок

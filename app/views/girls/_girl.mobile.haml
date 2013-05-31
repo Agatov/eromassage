@@ -1,0 +1,61 @@
+.girl
+  .avatar
+    = image_tag girl.avatar_url(:preview)
+  .info
+    .name
+      = girl.name
+    - if girl.available_today
+      .available
+        работает сегодня
+    .parameters
+      .parameter
+        .label
+          Возраст:
+        .value
+          = girl.age.to_s
+          лет
+      .parameter
+        .label
+          Грудь:
+        .value
+          = girl.bubs.to_s
+          размер
+      .parameter
+        .label
+          Рост:
+        .value
+          = girl.height.to_s
+          см
+      .parameter
+        .label
+          Вес:
+        .value
+          = girl.weight.to_s
+          кг
+
+      .parameter
+        .label
+          Глаза:
+        .value
+          Зеленые
+
+
+  .modal-template
+    .header
+      .title
+        = "#{girl.name}, #{girl.age.to_s} лет"
+    .photos#girl-photos
+      - girl.photos.each do |photo|
+        .photo{photo_id: photo.id}
+          = image_tag photo.image_url(:full)
+
+    .gallery
+      - girl.photos.each do |photo|
+        .preview{photo_id: photo.id}
+          -#.overlay
+          = image_tag photo.image_url(:preview)
+
+      .contacts
+        Запишись к ней.
+        %br
+        +7 (495) 888-88-88

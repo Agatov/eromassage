@@ -2,10 +2,10 @@
 %html
   %head
     = csrf_meta_tags
+    = display_meta_tags
     %meta{:content => 'width=device-width, initial-scale=1, maximum-scale=1', :name => 'viewport'}
-    = stylesheet_link_tag    'application', :media => 'all'
-    = javascript_include_tag 'http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU'
-    = javascript_include_tag 'application'
+    = stylesheet_link_tag    'mobile', :media => 'all'
+    = javascript_include_tag 'mobile'
 
   %body
     = yield

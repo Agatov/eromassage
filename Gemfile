@@ -28,12 +28,12 @@ gem 'kaminari'
 gem 'rmagick'
 gem 'carrierwave'
 
-gem 'simple_enum', :git => 'git://github.com/lwe/simple_enum.git'
-gem 'thinking-sphinx'
 gem 'unicorn'
-gem 'omniauth'
 gem 'russian', '~> 0.6.0'
 gem 'flash_cookie_session'
+gem 'httparty'
+
+gem 'meta-tags', :require => 'meta_tags'
 
 
 
