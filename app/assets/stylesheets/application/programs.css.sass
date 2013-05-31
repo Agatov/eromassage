@@ -1,0 +1,38 @@
+#programs
+  background: #f2f7fa
+  border-top: 1px solid #d9dee1
+  border-bottom: 1px solid #d9dee1
+
+  .programs
+    margin-top: 50px
+    @include thumbnails_parent
+
+    .program
+
+      float: left
+      width: 300px
+      height: 300px
+      border-radius: 300px
+      margin-right: 20px
+      background: #000
+      color: #fff
+      text-align: center
+
+
+      &:nth-child(3n)
+        margin-right: 0px
+
+      .title
+        color: #fff
+        margin-top: 60px
+        font-size: 24px
+
+
+        .price
+          margin-top: 15px
+          font-size: 48px
+          color: #EC4989
+
+          small
+            font-size: 14px
+            font-weight: 200

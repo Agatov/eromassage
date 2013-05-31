@@ -1,0 +1,68 @@
+.girls
+  margin-top: 50px
+  @include thumbnails_parent
+
+  .girl
+    float: left
+    position: relative
+    width: 460px
+    height: 240px
+    margin-right: 40px
+    margin-bottom: 60px
+
+    &:nth-child(2n)
+      margin-right: 0px
+      float: right
+
+
+    .modal-template
+      display: none
+
+
+    .avatar
+      width: 180px
+      height: 240px
+      cursor: pointer
+
+      img
+        box-shadow: 3px 3px 5px 0 #ddd
+
+    .info
+      position: absolute
+      top: 0px
+      left: 200px
+
+
+      .name
+        height: 40px
+        padding-left: 15px
+        font-size: 24px
+        color: #000
+
+        small
+
+          font-size: 12px
+          background: #96bf48
+          color: #fff
+          padding: 3px
+
+
+      .parameters
+        .parameter
+          font-size: 14px
+          width: 250px
+          height: 40px
+          padding: 0 15px
+          border-radius: 3px
+          &:nth-child(2n)
+            background: #f9f9f9
+          .label
+            float: left
+            width: 100px
+            height: 40px
+            line-height: 40px
+          .value
+            float: left
+            width: 100px
+            height: 40px
+            line-height: 40px

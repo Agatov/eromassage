@@ -1,0 +1,38 @@
+.rooms
+  @include thumbnails_parent
+  margin-top: 75px
+
+  .room
+    float: left
+    position: relative
+    width: 440px
+    height: 240px
+    margin-right: 40px
+    margin-bottom: 40px
+
+    .modal-template
+      display: none
+
+    .name
+      font-size: 24px
+      margin-bottom: 15px
+      color: #479ccf
+      font-weight: 200
+
+    .content
+      position: relative
+      .image
+        width: 150px
+        height: 150px
+        background: #eee
+        cursor: pointer
+
+        img
+          box-shadow: 3px 3px 5px 0 #ddd
+      .about
+        position: absolute
+        top: 0px
+        left: 175px
+        line-height: 1.4
+        color: #333
+        font-size: 14px
