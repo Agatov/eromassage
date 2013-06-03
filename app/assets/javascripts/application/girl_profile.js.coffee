@@ -1,7 +1,7 @@
 $ ->
 
   waitForMap ->
-    @map = new ymaps.Map($("#map")[0], {center: [55.7990, 37.54527], zoom: 16})
+    @map = new ymaps.Map($("#map")[0], {center: [55.7990, 37.54527], zoom: 15})
 
 #    balloon = new ymaps.Balloon(@map, null, {
 #      contentLayout: '<div style="background: #fff; width: 400px; height: 300px;">asdasdasdasd</div>'
