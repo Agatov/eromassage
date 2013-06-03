@@ -31,7 +31,7 @@ server 'ec2-54-241-13-87.us-west-1.compute.amazonaws.com', :app, :web, :db, prim
 after 'deploy:update_code', 'deploy:bundle_install'
 after 'deploy:update_code', 'deploy:configure'
 #after 'deploy:configure', 'deploy:migrate'
-#after 'deploy:configure', 'deploy:assets:precompile'
+after 'deploy:configure', 'deploy:assets:precompile'
 after 'deploy:restart', 'deploy:cleanup'
 
 namespace :deploy do
