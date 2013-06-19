@@ -30,6 +30,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'unicorn'
+gem 'kgio', '2.7.4'
 gem 'russian', '~> 0.6.0'
 gem 'flash_cookie_session'
 gem 'httparty'

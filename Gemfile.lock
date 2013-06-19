@@ -86,7 +86,7 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.8.0)
+    kgio (2.7.4)
     libv8 (3.3.10.4)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -184,6 +184,7 @@ DEPENDENCIES
   httparty
   js-routes
   kaminari
+  kgio (= 2.7.4)
   meta-tags
   mysql2!
   rabl
