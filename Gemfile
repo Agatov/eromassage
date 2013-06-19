@@ -29,7 +29,7 @@ gem 'kaminari'
 gem 'rmagick'
 gem 'carrierwave'
 
-gem 'unicorn'
+gem 'unicorn', '4.5.0'
 gem 'kgio', '2.7.4'
 gem 'russian', '~> 0.6.0'
 gem 'flash_cookie_session'
