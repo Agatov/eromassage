@@ -21,17 +21,14 @@ set :unicorn_conf, "#{deploy_to}/shared/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/unicorn/shared/pids/unicorn.pid"
 
 
-
-set :user, :ubuntu
-set :location, 'ec2-54-241-13-87.us-west-1.compute.amazonaws.com'
-ssh_options[:keys] = [File.join(ENV["HOME"], "projects", "keys", "ncaliforniakey.pem")]
-server 'ec2-54-241-13-87.us-west-1.compute.amazonaws.com', :app, :web, :db, primary: true
-
+server '188.120.246.84', :app, :web, :db, primary: true
+set :location, '188.120.246.84'
+set :user, :root
 
 after 'deploy:update_code', 'deploy:bundle_install'
 after 'deploy:update_code', 'deploy:configure'
-after 'deploy:configure', 'deploy:migrate'
-after 'deploy:configure', 'deploy:assets:precompile'
+#after 'deploy:configure', 'deploy:migrate'
+#after 'deploy:configure', 'deploy:assets:precompile'
 after 'deploy:restart', 'deploy:cleanup'
 
 namespace :deploy do
