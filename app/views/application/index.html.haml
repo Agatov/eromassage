@@ -70,6 +70,38 @@
         = render partial: 'girls/girl', locals: {girl: girl}
 
 
+%section#programs
+  .wrapper
+    .title
+      Программы и цены
+
+
+    .programs
+      .program
+        .title
+          1 час
+          .price
+            1 700
+            %small
+              рублей
+
+      .program
+        .title
+          2 часа с 2 девушками
+          .price
+            6 100
+            %small
+              рублей
+
+      .program
+        .title
+          3 часа и 3 девушки
+          .price
+            12 000
+            %small
+              рублей
+
+
 -#%section#preferences
   .wrapper
     .title
@@ -115,38 +147,6 @@
     .rooms
       - @rooms.each do |room|
         = render partial: 'rooms/room', locals: {room: room}
-
-
-%section#programs
-  .wrapper
-    .title
-      Программы и цены
-
-
-    .programs
-      .program
-        .title
-          1 час
-          .price
-            1 700
-            %small
-              рублей
-
-      .program
-        .title
-          2 часа с 2 девушками
-          .price
-            6 100
-            %small
-              рублей
-
-      .program
-        .title
-          3 часа и 3 девушки
-          .price
-            12 000
-            %small
-              рублей
 
 #map
 
