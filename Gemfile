@@ -15,10 +15,13 @@ end
 group :development do
   gem 'thin'
   gem 'capistrano'
+  gem 'sqlite3'
 end
 
-gem 'sqlite3'
-gem 'mysql2',  :git => 'http://github.com/brianmario/mysql2.git'
+group :production do
+  gem 'mysql2',  :git => 'http://github.com/brianmario/mysql2.git'
+end
+
 gem 'haml-rails'
 gem 'rabl'
 gem 'js-routes'
