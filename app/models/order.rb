@@ -41,8 +41,8 @@ private
   def sms_text_to_client
     I18n.translate(
         'sms.notification_message_to_client',
-        code: code,
         username: username,
+        code: code,
         date: Russian.strftime(created_at, '%d %b, %H:%M')
     )
   end

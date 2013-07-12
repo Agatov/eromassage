@@ -111,7 +111,8 @@
     Приятный сюрприз любимому клиенту
   .body
     %form#promotional-form{action: '#'}
-      .phone-error-message Длина номера мобильного телефона должна быть 11 символов в формате 7 xxx xxx xx xx
+      .error-message#phone-error-message Длина номера мобильного телефона должна быть 11 символов в формате 7 xxx xxx xx xx
+      .error-message#username-error-message Введипе пожалуйста имя
       %input{type: :text, name: :username, placeholder: 'Ваше имя'}
       %input{type: :text, name: :phone, placeholder: 'Ваш телефон'}
       %input{type: :hidden, name: :action_id, value: 1}

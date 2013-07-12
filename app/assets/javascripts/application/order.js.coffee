@@ -26,7 +26,12 @@ $ ->
     phone = $('#promotional-form input[name=phone]').val()
     action_id = $('#promotional-form input[name=action_id]').val()
     if  phone.length != 11
-      $('#promotional-form .phone-error-message').hide(100).show(300)
+      $('#promotional-form .error-message').hide(100)
+      $('#promotional-form #phone-error-message').hide(100).show(300)
+      return false
+    if  username.length < 2
+      $('#promotional-form .error-message').hide(100)
+      $('#promotional-form #username-error-message').hide(100).show(300)
       return false
     $.post '/orders', {'order[username]': username, 'order[phone]': phone, 'order[action_id]': action_id}, (data) =>
       $('.modal-overlay').unbind 'click'
