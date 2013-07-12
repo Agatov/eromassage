@@ -14,7 +14,6 @@
           = image_tag girl.avatar_url(:large)
       = f.input :about, input_html: {class: 'span6', rows: 4}
       .form-actions.span6
-        = @working_days.inspect
         = f.submit 'Сохранить', class: ['btn', 'btn-primary']
     .span3.offset1
       %legend Расписание
