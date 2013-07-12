@@ -3,3 +3,4 @@
 //= require slides.jquery
 //= require swfobject
 //= require admin/uploader
+//= require admin/schedule
