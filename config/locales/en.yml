@@ -7,8 +7,8 @@ en:
 #  site_title: 'Как выучить C++'
 
   sms:
-    notification_message: "%{username} : %{phone}. %{date}"
-
+    notification_message_to_admin: "%{username} : %{phone}. %{date}"
+    notification_message_to_client: "%{username}, ваш секретный код %{code}"
   time:
     formats:
       dayMonth: "%d %B"

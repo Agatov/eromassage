@@ -1,7 +1,5 @@
 .overlay
 
-
-
 .modal-wrapper
   .olo
     .modal-close
@@ -70,7 +68,7 @@
         = render partial: 'girls/girl', locals: {girl: girl}
 
 
-%section#programs
+%section.gray-section#programs
   .wrapper
     .title
       Программы и цены
@@ -101,6 +99,35 @@
             %small
               рублей
 
+%section#promotional
+  .wrapper
+    .title
+      Приятный сюрприз любимому клиенту
+    .promotional-content
+      %a.def-btn#promotional-order Принять участие в акции
+.modal-overlay
+.modal-dialog
+  .header
+    Приятный сюрприз любимому клиенту
+  .body
+    %form#promotional-form{action: '#'}
+      .phone-error-message Длина номера мобильного телефона должна быть 11 символов в формате 7 xxx xxx xx xx
+      %input{type: :text, name: :username, placeholder: 'Ваше имя'}
+      %input{type: :text, name: :phone, placeholder: 'Ваш телефон'}
+      %input{type: :hidden, name: :action_id, value: 1}
+      %button#send-order
+        Принять участие
+
+.modal-thank-you
+  .header
+    Спасибо!
+  .body
+    Сейчас вам придет sms с секретным кодом
+
+
+    %button#hide-thank-you
+      Ок
+    
 
 -#%section#preferences
   .wrapper
@@ -137,7 +164,7 @@
 
 
 
-%section#rooms
+%section.gray-section#rooms
   .wrapper
     .title
       Интерьер
