@@ -1,0 +1,28 @@
+= form_tag edit_admin_girl_schedule_path(@girl), method: :put do
+  .span6.offset3
+    %h3= @girl.name
+    %legend Расписание
+    %table.girl-schedule__table-mini.table.table-bordered
+      %caption
+        %span.muted= Russian::strftime @today.prev_month, '%B'
+        %span.girl-schedule__table-mini_caption-in-center= Russian::strftime @today, '%B'
+        %span.muted= Russian::strftime @today.next_month, '%B'
+      %thead
+        %tr
+          %th Пн
+          %th Вт
+          %th Ср
+          %th Чт
+          %th Пт
+          %th Сб
+          %th Вс
+      %tbody
+        - @calendar_group_by_week.each do |number_of_week, date_array|
+          %tr
+            - date_array.each do |date|
+              - bool = @working_days.include? date.to_s
+              %td
+                %label{class: ('schedule__green-bg' if bool === true)}
+                  = date.day
+                  %input{type:'checkbox', name: "schedule[#{date}]", value: 1, checked: (:checked if bool === true )}
+    = submit_tag 'Сохранить изменения', class: 'btn'

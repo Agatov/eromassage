@@ -23,6 +23,8 @@
       %tr
         %td
           = girl.name
+          %br
+          = link_to 'Расписание', admin_girl_schedule_index_path(girl)
         %td
           = girl.age.to_s
         %td

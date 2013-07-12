@@ -1,33 +1,16 @@
-= simple_form_for girl, url: url, html: {class: 'form-horizontal'} do |f|
-  .row
-    .span8
-      = f.input :available_today
-      = f.input :name, input_html: {class: 'span6'}
-      = f.input :age, input_html: {class: 'span6'}
-      = f.input :height, input_html: {class: 'span6'}
-      = f.input :weight, input_html: {class: 'span6'}
-      = f.input :bubs, input_html: {class: 'span6'}
-      = f.input :eyes, input_html: {class: 'span6'}
-      = f.input :avatar, input_html: {class: 'span6'}
-      - if girl.avatar?
-        .avatar{style: 'padding: 10px; margin: 10px; margin-left: 170px'}
-          = image_tag girl.avatar_url(:large)
-      = f.input :about, input_html: {class: 'span6', rows: 4}
-      .form-actions.span6
-        = f.submit 'Сохранить', class: ['btn', 'btn-primary']
-    .span3.offset1
-      %legend Расписание
-      %table.girl-schedule__table-mini.table.table-bordered
-        %caption
-          %span.muted= Russian::strftime @today.prev_month, '%B'
-          %span.girl-schedule__table-mini_caption-in-center= Russian::strftime @today, '%B'
-          %span.muted= Russian::strftime @today.next_month, '%B'
-        %tbody
-          - @calendar_group_by_week.each do |number_of_week, date_array|
-            %tr
-              - date_array.each do |date|
-                - bool = @working_days.include? date.to_s
-                %td
-                  %label{class: ('schedule__green-bg' if bool === true)}
-                    = date.day
-                    %input{type:'checkbox', name: "schedule[#{date}]", value: 1, checked: (:checked if bool === true )}
+.span8
+  = simple_form_for girl, url: url, html: {class: 'form-horizontal'} do |f|
+    = f.input :available_today
+    = f.input :name, input_html: {class: 'span6'}
+    = f.input :age, input_html: {class: 'span6'}
+    = f.input :height, input_html: {class: 'span6'}
+    = f.input :weight, input_html: {class: 'span6'}
+    = f.input :bubs, input_html: {class: 'span6'}
+    = f.input :eyes, input_html: {class: 'span6'}
+    = f.input :avatar, input_html: {class: 'span6'}
+    - if girl.avatar?
+      .avatar{style: 'padding: 10px; margin: 10px; margin-left: 170px'}
+        = image_tag girl.avatar_url(:large)
+    = f.input :about, input_html: {class: 'span6', rows: 4}
+    .form-actions.span6
+      = f.submit 'Сохранить', class: ['btn', 'btn-primary']      
