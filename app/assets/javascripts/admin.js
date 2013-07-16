@@ -4,3 +4,4 @@
 //= require swfobject
 //= require admin/uploader
 //= require admin/schedule
+//= require admin/alert

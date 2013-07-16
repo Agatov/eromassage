@@ -8,7 +8,8 @@ Eromassage::Application.routes.draw do
   namespace :admin do
     root to: 'girls#index'
     resources :girls do
-      resources :schedule
+      get 'schedule' => 'schedule#index'
+      put 'schedule' => 'schedule#update'
       resources :photos, only: [:create, :destroy]
     end
 

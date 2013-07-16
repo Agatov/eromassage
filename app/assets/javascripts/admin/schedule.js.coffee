@@ -1,4 +1,4 @@
-jQuery ->
+$ ->
   $('.girl-schedule__table-mini td input').change ->
     status = @.checked
     if status is true

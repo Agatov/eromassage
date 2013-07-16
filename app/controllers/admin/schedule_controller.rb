@@ -1,12 +1,27 @@
 class Admin::ScheduleController < AdminController
+  before_filter :define_calendar_and_today
+
   def index
     @girl = Girl.find params[:girl_id]
     @working_days = get_working_days
-    @today = Date.today
-    calendar = get_calendar @today
-    @calendar_group_by_week = calendar.group_by{|date| date.cweek}
+    
+    @calendar_group_by_week = @calendar.group_by{|date| date.cweek}
+  end
+
+  def update
+    @girl = Girl.find params[:girl_id]
+    build_schedule_for_girl
+    @girl.save
+    delete_from_schedule_if_need @calendar
+
+    redirect_to admin_girl_schedule_path(@girl), notice: t('changes_saved')
   end
 private
+  def define_calendar_and_today
+    @today = Date.today
+    @calendar = get_calendar @today
+  end
+
   def get_schedules_arr_from_params
     res = []
     params[:schedule].each {|schedule, val| res << schedule if val.to_i == 1}

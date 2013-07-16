@@ -1,5 +1,6 @@
-= form_tag edit_admin_girl_schedule_path(@girl), method: :put do
-  .span6.offset3
+.span6.offset3
+  = form_tag admin_girl_schedule_path(@girl), method: :put do
+    = bootstrap_flash
     %h3= @girl.name
     %legend Расписание
     %table.girl-schedule__table-mini.table.table-bordered
@@ -26,3 +27,4 @@
                   = date.day
                   %input{type:'checkbox', name: "schedule[#{date}]", value: 1, checked: (:checked if bool === true )}
     = submit_tag 'Сохранить изменения', class: 'btn'
+    = link_to 'Назад', admin_girls_path, class: 'btn'
