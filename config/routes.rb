@@ -13,6 +13,9 @@ Eromassage::Application.routes.draw do
       get 'schedule' => 'schedule#index'
       put 'schedule' => 'schedule#update'
       resources :photos, only: [:create, :destroy]
+      collection do 
+        resources :girls_comments, path: 'comments', only: [:index, :destroy], controller: 'girls/comments'
+      end
     end
 
     resources :rooms do

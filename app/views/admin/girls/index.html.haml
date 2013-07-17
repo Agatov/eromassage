@@ -1,7 +1,8 @@
 %legend
   Список
-  %a.btn{href: new_admin_girl_path, style: 'float: right;'}
-    Добавить
+  .pull-right
+    = link_to 'Комментарии', admin_girls_comments_path, class: 'btn'
+    = link_to 'Добавить', new_admin_girl_path, class: 'btn'
 
 %table.table.table-striped
   %thead

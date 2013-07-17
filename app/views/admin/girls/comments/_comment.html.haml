@@ -1,0 +1,6 @@
+%tr
+  %td= comment.username
+  %td= comment.text
+  %td= comment.girl.name
+  %td= get_time comment.created_at
+  %td= link_to 'Удалить', admin_girls_comment_path(comment), method: :delete, class: 'btn btn-danger btn-mini'
