@@ -4,6 +4,7 @@ class Girl < ActiveRecord::Base
   has_many :girl_photos
   has_many :photos, through: :girl_photos
   has_many :schedules
+  has_many :comments, class_name: 'GirlComment'
 
   mount_uploader :avatar, AvatarUploader
 end
