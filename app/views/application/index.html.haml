@@ -1,48 +1,3 @@
-.overlay
-
-
-
-.modal-wrapper
-  .olo
-    .modal-close
-      %a#close-modal{href: '#'}
-        закрыть (х)
-    .modal
-
-
-.topbar
-  .wrapper
-    .logo
-      8 (962) 918-69-85
-      %small
-        %br
-        Метро Динамо.
-        &nbsp;&nbsp;&nbsp;
-        Круглосуточно
-
-    %ul.navigation
-
-      %li
-        %a.nav-link{href: '#', rel_id: 'girls'}
-          Девушки
-
-      %li
-        %a.nav-link{href: '#', rel_id: 'programs'}
-          Программы
-
-      %li
-        %a.nav-link{href: '#', rel_id: 'rooms'}
-          Интерьер
-
-      %li
-        %a.nav-link{href: '#', rel_id: 'map'}
-          Контакты
-
-      %li
-        %a.get-call{href: '#'}
-          Заказать звонок
-
-
 #intro
   .wrapper
     .slogan
@@ -52,23 +7,6 @@
       Приглашает вас на
       %br
       %span.pink эротический массаж
-
-
-
-%section#girls
-  .wrapper
-    .title
-      Девушки
-      %small
-        Они такие же, как и на фото.
-
-
-
-
-    .girls
-      - @girls.each do |girl|
-        = render partial: 'girls/girl', locals: {girl: girl}
-
 
 %section#programs
   .wrapper
@@ -174,15 +112,3 @@
       %br
       тел: 8 (962) 918-69-85
     .arrow-up
-
-.request-call-dialog
-  .header-transparent
-  .arrow-up
-  .content
-    .success
-      Мы вам скоро перезвоним!
-    %form
-      %input{type: :text, name: :username, placeholder: 'Ваше имя'}
-      %input{type: :text, name: :phone, placeholder: 'Ваш телефон'}
-      .submit#submit-order
-        Заказать звонок

@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   before_filter :mobile_device?
 
   def index
-    @girls = Girl.order(:id)
     @rooms = Room.order(:id)
 
     set_meta_tags title: I18n.translate('site_title')

@@ -7,5 +7,49 @@
     = javascript_include_tag 'http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU'
     = javascript_include_tag 'application'
   %body
-    = yield
+    .overlay
+    .modal-wrapper
+      .olo
+        .modal-close
+          %a#close-modal{href: '#'}
+            закрыть (х)
+        .modal
+
+    .topbar
+      .wrapper
+        .logo
+          8 (962) 918-69-85
+          %small
+            %br
+            Метро Динамо.
+            &nbsp;&nbsp;&nbsp;
+            Круглосуточно
+
+        %ul.navigation
+          %li= link_to 'Девушки', girls_path, class: 'nav-link'
+          %li
+            %a.nav-link{href: '#', rel_id: 'programs'}
+              Программы
+          %li
+            %a.nav-link{href: '#', rel_id: 'rooms'}
+              Интерьер
+          %li
+            %a.nav-link{href: '#', rel_id: 'map'}
+              Контакты
+          %li
+            %a.get-call{href: '#'}
+              Заказать звонок
+    .content
+      = yield
+    .request-call-dialog
+      .header-transparent
+      .arrow-up
+      .content
+        .success
+          Мы вам скоро перезвоним!
+        %form
+          %input{type: :text, name: :username, placeholder: 'Ваше имя'}
+          %input{type: :text, name: :phone, placeholder: 'Ваш телефон'}
+          .submit#submit-order
+            Заказать звонок
     = render partial: 'layouts/metrika'
