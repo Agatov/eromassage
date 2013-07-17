@@ -1,9 +1,14 @@
 %legend
-  Список
-  .pull-right
-    = link_to 'Комментарии', admin_girls_comments_path, class: 'btn'
-    = link_to 'Добавить', new_admin_girl_path, class: 'btn'
+  - if @girl.present?
+    = link_to 'Комментарии', admin_girls_comments_path
+    —
+    = @girl.name
+  - else
+    Комментарии
 
+  .pull-right
+    = link_to 'Девушки', admin_girls_path, class: 'btn'
+    = link_to 'Добавить', new_admin_girl_path, class: 'btn'
 %table.table.table-striped
   %thead
     %tr

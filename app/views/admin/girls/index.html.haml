@@ -1,5 +1,5 @@
 %legend
-  Список
+  Девушки
   .pull-right
     = link_to 'Комментарии', admin_girls_comments_path, class: 'btn'
     = link_to 'Добавить', new_admin_girl_path, class: 'btn'
@@ -26,6 +26,8 @@
           = girl.name
           %br
           = link_to 'Расписание', admin_girl_schedule_path(girl)
+          = link_to 'Коментарии', admin_girls_comments_path(girl_id: girl.id)
+          %span.muted= "#{girl.count_of_comments.to_i}"
         %td
           = girl.age.to_s
         %td

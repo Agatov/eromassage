@@ -1,6 +1,12 @@
 %tr
   %td= comment.username
   %td= comment.text
-  %td= comment.girl.name
+  %td
+    - if @girl.present?
+      = comment.girl.name
+    - else
+      = link_to comment.girl.name, admin_girls_comments_path(girl_id: comment.girl.id)
   %td= get_time comment.created_at
-  %td= link_to 'Удалить', admin_girls_comment_path(comment), method: :delete, class: 'btn btn-danger btn-mini'
+  %td
+    = link_to 'Изменить', edit_admin_girls_comment_path(comment, girl_id: params[:girl_id]), class: 'btn btn-mini'
+    = link_to 'Удалить', admin_girls_comment_path(comment, girl_id: params[:girl_id]), method: :delete, class: 'btn btn-danger btn-mini'
