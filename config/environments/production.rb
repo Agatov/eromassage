@@ -46,7 +46,7 @@ Eromassage::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   config.assets.precompile += %w( mobile.css mobile.js )
-  config.assets.precompile += %w( admin.css admin.js )
+  config.assets.precompile += %w( admin.css admin.js rails.js)
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
