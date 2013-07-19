@@ -8,6 +8,8 @@ Eromassage::Application.routes.draw do
   resources :girls, only: :index
   resources :girl_comments, path: 'girls/:girl_id/comments', only: [:index, :create]
 
+  resources :programs, only: :index
+
   namespace :admin do
     root to: 'girls#index'
     resources :girls do
@@ -22,5 +24,7 @@ Eromassage::Application.routes.draw do
     resources :rooms do
       resources :photos, only: [:create, :destroy]
     end
+
+    resources :programs, except: [:show]
   end
 end

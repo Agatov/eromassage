@@ -26,16 +26,9 @@
             Круглосуточно
 
         %ul.navigation
+          %li= link_to 'Главная', root_path, class: 'nav-link'
           %li= link_to 'Девушки', girls_path, class: 'nav-link'
-          %li
-            %a.nav-link{href: '#', rel_id: 'programs'}
-              Программы
-          %li
-            %a.nav-link{href: '#', rel_id: 'rooms'}
-              Интерьер
-          %li
-            %a.nav-link{href: '#', rel_id: 'map'}
-              Контакты
+          %li= link_to 'Программы', programs_path, class: 'nav-link'
           %li
             %a.get-call{href: '#'}
               Заказать звонок

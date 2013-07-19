@@ -13,3 +13,10 @@ ru:
       dayMonth: "%d %B"
 
   changes_saved: "Изменения сохранены"
+
+  programs:
+    duration:
+      one: Час
+      one_and_half: Полтора часа
+      two: Два часа
+      more_then_two: Больше чем два часа

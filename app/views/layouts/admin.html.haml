@@ -10,20 +10,15 @@
       .navbar.navbar-fixed-top
         .navbar-inner
           .container
-            %a.brand{href: '#'}
+            %a.brand{href: admin_root_path}
               Eromassage CRM
             %ul.nav
               %li.divider-vertical
-              %li
-                %a{href: admin_girls_path}
-                  Телки
-              %li
-                %a{href: admin_rooms_path}
-                  Комнаты
-
-
-
-
+              %li= link_to 'Девушки', admin_girls_path
+              %li.divider-vertical
+              %li= link_to 'Комнаты', admin_rooms_path
+              %li.divider-vertical
+              %li= link_to 'Программы', admin_programs_path
       .container#main
         .row
           .span12

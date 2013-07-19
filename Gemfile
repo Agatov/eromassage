@@ -30,6 +30,7 @@ gem 'js-routes'
 gem 'simple_form'
 
 gem 'kaminari'
+gem 'simple_enum'
 
 gem 'rmagick'
 gem 'carrierwave'

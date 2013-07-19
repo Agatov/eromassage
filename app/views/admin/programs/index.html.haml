@@ -1,0 +1,14 @@
+%legend
+  Массажные программы
+
+  .pull-right
+    = link_to 'Добавить', new_admin_program_path, class: 'btn'
+%table.table.table-striped
+  %thead
+    %tr
+      %th Название
+      %th Краткое описание
+      %th Информация
+      %th Действия
+  %tbody
+    = render @programs

@@ -1,0 +1,8 @@
+%section
+  .wrapper
+    .title
+      Массажные программы
+      - unless @programs.any?
+        %small Программы появятся в ближайшее время
+    .massage-programs
+      = render @programs

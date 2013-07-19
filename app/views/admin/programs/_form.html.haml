@@ -1,0 +1,15 @@
+.span8
+  = simple_form_for [:admin, @program], html: {class: 'form-horizontal'} do |f|
+    = f.input :title, label: 'Название', input_html: {class: 'span6'}
+    = f.input :preview_description, label: 'Краткое описание', input_html: {class: 'span6', rows: 2}
+    = f.input :description, label: 'Полное описание', input_html: {class: 'span6', rows: 4}
+    = f.input :image, label: 'Изображение', input_html: {class: 'span6'}
+    - if @program.image?
+      .avatar{style: 'padding: 10px; margin: 10px; margin-left: 170px'}
+        = image_tag @program.image_url(:thumb)
+    = f.input :girls_count, label: 'Количество девушек', input_html: {class: 'span1'}
+    = f.input :price, label: 'Цена', input_html: {class: 'span2'}
+    = f.input :duration_cd, label: 'Длительность', collection: Program.durations, label_method: lambda{ |el| t("programs.duration.#{el.first}")}, input_html: {class: 'span2'}
+    .form-actions.span6
+      = f.submit 'Сохранить', class: 'btn btn-primary'
+      = link_to 'Назад', admin_programs_path, class: 'btn'

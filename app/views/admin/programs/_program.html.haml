@@ -1,0 +1,17 @@
+%tr
+  %td= program.title
+  %td= program.preview_description
+  %td
+    Цена:
+    = program.price
+    %br
+    - if program.duration.present?
+      Длительность:
+      = t("programs.duration.#{program.duration}")
+      %br
+    Количество девушек:
+    = program.girls_count
+  %td
+    = link_to 'Изменить', edit_admin_program_path(program), class: 'btn btn-mini'
+    = link_to 'Удалить', admin_program_path(program), method: :delete, class: 'btn btn-mini btn-danger'
+  
