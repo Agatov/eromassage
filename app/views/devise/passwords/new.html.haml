@@ -1,0 +1,8 @@
+%section
+  .wrapper
+    %h2 Забыли пароль?
+    = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, class:'forms' }) do |f|
+      = bootstrap_flash
+      = f.input :email, label: 'Электропочта', :required => true, :autofocus => true
+      = f.button :submit, "Отправить инструкции по восстановлению"
+    = render "devise/shared/links"

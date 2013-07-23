@@ -1,0 +1,9 @@
+%section
+  .wrapper
+    %h2 Запрос на подтверждение почты
+    = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, class: 'forms' }) do |f|
+      = bootstrap_flash
+      = f.full_error :confirmation_token
+      = f.input :email, label: 'Электропочта', :required => true, :autofocus => true
+      = f.button :submit, "Отправить"
+    = render "devise/shared/links"

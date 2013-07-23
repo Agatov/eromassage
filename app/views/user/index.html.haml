@@ -1,0 +1,11 @@
+%section
+  .wrapper
+    = bootstrap_flash
+    Привет,
+    %h3= @user.nickname
+    = simple_form_for @user, html: {class: 'forms'} do |f|
+      = f.input :nickname, label: 'Имя'
+      = f.input :avatar, label: 'Аватар'
+      - if @user.avatar?
+        .avatar(style="margin-bottom: 20px;")= image_tag @user.avatar_url(:thumb)
+      = f.submit 'Обновить', class: 'btn'

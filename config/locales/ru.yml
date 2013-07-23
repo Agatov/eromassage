@@ -20,3 +20,7 @@ ru:
       one_and_half: Полтора часа
       two: Два часа
       more_then_two: Больше чем два часа
+
+  notifications:
+    updated: Изменения сохранены
+    perission_error: Ошибка доступа

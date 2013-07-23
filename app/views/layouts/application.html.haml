@@ -6,6 +6,7 @@
     = stylesheet_link_tag    'application', :media => 'all'
     = javascript_include_tag 'http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU'
     = javascript_include_tag 'application'
+    = javascript_include_tag 'rails'
   %body
     .overlay
     .modal-wrapper
@@ -29,6 +30,12 @@
           %li= link_to 'Главная', root_path, class: 'nav-link'
           %li= link_to 'Девушки', girls_path, class: 'nav-link'
           %li= link_to 'Программы', programs_path, class: 'nav-link'
+          - if user_signed_in?
+            %li
+              = link_to 'Личный кабинет', user_index_path
+              = link_to 'Выход', destroy_user_session_path, method: :delete
+          - else
+            %li= link_to 'Личный кабинет', new_user_session_path
           %li
             %a.get-call{href: '#'}
               Заказать звонок
