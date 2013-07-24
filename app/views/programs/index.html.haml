@@ -2,7 +2,25 @@
   .wrapper
     .title
       Массажные программы
-      - unless @programs.any?
+      - if @programs.any?
+        %small
+          %select(name="programs_filter[duration_cd]")
+            %option Длительность программы
+            - Program.durations.each do |duration|
+              %option{value: duration.last}
+                = t("programs.duration.#{duration.first}")
+          %select(name="programs_filter[girls_count]")
+            %option Количество девушек
+            %option{value: 1} Одна 
+            %option{value: 2} Две
+            %option{value: 3} Три 
+            %option{value: 4} Больше трех 
+          %select(name="programs_filter[price]")
+            %option Стоимость
+            %option{value: 5000} До пяти тысяч 
+            %option{value: 10000} До десяти тысяч
+            %option{value: 15000} До пятнадцати тысяч
+      - else
         %small Программы появятся в ближайшее время
     .massage-programs
       = render @programs

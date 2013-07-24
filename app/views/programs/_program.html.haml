@@ -1,5 +1,15 @@
 .program
   .program-title= program.title
   .program-content
+    .program-info<
+      = t("programs.duration.#{program.duration}")
+      %br
+      = raw "#{program.girls_count}&nbsp;"
+      = Russian.p program.girls_count, 'девушка', 'девушки', 'девушек'
+      %br
+      = raw "#{program.price}&nbsp;"
+      = Russian.p program.price, 'рубль', 'рубля', 'рублей'
     .program-content-photo= image_tag program.image.thumb if program.image.thumb.present?
     .program-content-description= program.preview_description
+    .clear
+  

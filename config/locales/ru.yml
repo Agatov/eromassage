@@ -16,10 +16,10 @@ ru:
 
   programs:
     duration:
-      one: Час
+      one: Один час
       one_and_half: Полтора часа
       two: Два часа
-      more_then_two: Больше чем два часа
+      more_then_two: Больше двух часов
 
   notifications:
     updated: Изменения сохранены
