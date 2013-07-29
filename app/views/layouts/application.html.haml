@@ -5,6 +5,8 @@
     = display_meta_tags
     = stylesheet_link_tag    'application', :media => 'all'
     = javascript_include_tag 'http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU'
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'rails'
   %body
     .overlay
     .modal-wrapper
@@ -52,5 +54,3 @@
           .submit#submit-order
             Заказать звонок
     = render partial: 'layouts/metrika'
-    = javascript_include_tag 'application'
-    = javascript_include_tag 'rails'
