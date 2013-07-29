@@ -1,6 +1,6 @@
-//= require lib/jquery-1.9.1
+//= require lib/jquery-1.10.2
 //= require jquery-ui
-//= require application/girl_profile
 //= require application/initializer
 //= require application/order
+//= require application/girl_profile
 //= require application/guestbook
