@@ -24,3 +24,5 @@ ru:
   notifications:
     updated: Изменения сохранены
     perission_error: Ошибка доступа
+  guestbook:
+    post_created: Ваша запись успешно добавлена

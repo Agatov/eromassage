@@ -15,4 +15,5 @@
             = f.input :message, label: false
             = f.submit 'Написать', class: 'btn'
       .guestbook-posts
+        = bootstrap_flash
         = render partial: 'post', collection: @guestbook_posts        

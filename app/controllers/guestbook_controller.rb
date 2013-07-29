@@ -10,7 +10,7 @@ class GuestbookController < ApplicationController
     @guestbook_post.user_id = current_user.id
     @guestbook_post.save
 
-    redirect_to guestbook_index_path
+    redirect_to guestbook_index_path, notice: t('guestbook.post_created')
   end
 
   def create_comment
