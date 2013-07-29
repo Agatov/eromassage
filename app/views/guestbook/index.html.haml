@@ -1,0 +1,18 @@
+%section
+  .wrapper
+    #container
+    .title 
+      Гостевая книга
+      - unless @guestbook_post.present? && user_signed_in?
+        %small
+          = succeed ',' do
+            = link_to 'Войдите', user_session_path
+          чтобы написать или комментировать
+    .guestbook
+      - if @guestbook_post.present? && user_signed_in?
+        .guestbook-posts__new
+          = simple_form_for @guestbook_post, url: posts_guestbook_index_path, html: {class: 'forms'} do |f|
+            = f.input :message, label: false
+            = f.submit 'Написать', class: 'btn'
+      .guestbook-posts
+        = render partial: 'post', collection: @guestbook_posts        

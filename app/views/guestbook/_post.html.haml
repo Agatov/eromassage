@@ -1,0 +1,20 @@
+.guestbook-post-wrapper
+  .guestbook-post
+    .guestbook-post-content
+      .guestbook-post-image
+        = image_tag post.user.avatar_url(:thumb)
+      .guestbook-post-title= post.user.nickname
+      .guestbook-post-message= post.message
+      .clear
+    %footer
+      = get_time post.created_at
+  - if post.comments.any?
+    %hr
+  .guestbook-post-comments
+    .guestbook-post-comments_list
+      = render post.comments if post.comments.any?
+    - if @guestbook_comment.present? && user_signed_in?
+      .guestbook-post-comments__new
+        = render partial: 'new_comment', locals: {post: post, guestbook_comment: @guestbook_comment}
+        
+      

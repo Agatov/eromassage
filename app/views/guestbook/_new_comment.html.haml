@@ -1,0 +1,3 @@
+= form_for guestbook_comment, url: comments_guestbook_index_path(post_id: post.id), html: {class: 'guestbook-post-comments__new-form', data: {post_id: post.id}} do |f|
+  = f.submit 'Комментировать', class: 'btn'
+  = f.text_area :message

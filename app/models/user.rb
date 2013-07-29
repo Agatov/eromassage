@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
          :recoverable, :trackable, :confirmable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :avatar, :nickname
+  # attr_protected :is_admin
 
   mount_uploader :avatar, SimpleUploader
+
+  def is_admin?
+    is_admin
+  end
 end

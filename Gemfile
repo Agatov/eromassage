@@ -45,6 +45,8 @@ gem 'httparty'
 
 gem 'meta-tags', :require => 'meta_tags'
 
+gem 'backbone-on-rails'
+
 
 
 

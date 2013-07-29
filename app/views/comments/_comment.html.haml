@@ -1,0 +1,12 @@
+.comment
+  .comment-image
+    = image_tag comment.user.avatar_url(:thumb)
+  .comment-content
+    .comment-title
+      %span.name= comment.user.nickname
+      %span.created_at
+        в
+        = get_time comment.created_at
+    .comment-message= comment.message
+    .clear
+    

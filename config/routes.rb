@@ -1,5 +1,5 @@
 Eromassage::Application.routes.draw do
-
+  root to: 'application#index'
 
   devise_for :users, skip: :registrations
   devise_scope :user do
@@ -8,7 +8,12 @@ Eromassage::Application.routes.draw do
   end
   resources :user, only: [:index, :update]
 
-  root to: 'application#index'
+  resources :guestbook, only: :index do
+    collection do
+      post 'posts' => 'guestbook#create_post'
+      post 'posts/:post_id/comments' => 'guestbook#create_comment', as: :comments
+    end
+  end
 
   resources :orders, only: :create
 
