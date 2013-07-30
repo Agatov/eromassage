@@ -4,3 +4,4 @@
 //= require application/order
 //= require application/girl_profile
 //= require application/guestbook
+//= require application/delete_comment

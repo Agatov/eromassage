@@ -7,4 +7,12 @@ class Comment < ActiveRecord::Base
   as_enum :type, guestbook: 1
 
   default_scope order: 'created_at ASC'
+
+  def destroy_it
+    case type
+      when :guestbook
+        post_comment = GuestbookPostComment.find_by_comment_id id
+        post_comment.destroy
+    end
+  end
 end

@@ -1,4 +1,5 @@
 .comment
+  = link_to '', comment_path(comment), method: :delete, remote: true, class: 'delete-link pull-right'
   .comment-image
     = image_tag comment.user.avatar_url(:thumb)
   .comment-content

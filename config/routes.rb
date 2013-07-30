@@ -10,10 +10,14 @@ Eromassage::Application.routes.draw do
 
   resources :guestbook, only: :index do
     collection do
-      post 'posts' => 'guestbook#create_post'
+      post   'posts'     => 'guestbook#create_post'
+      delete 'posts/:id' => 'guestbook#destroy_post', as: :post
+
       post 'posts/:post_id/comments' => 'guestbook#create_comment', as: :comments
     end
   end
+
+  resources :comments, only: :destroy
 
   resources :orders, only: :create
 

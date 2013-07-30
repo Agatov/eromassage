@@ -1,7 +1,7 @@
 class GuestbookController < ApplicationController
   before_filter :authenticate_user!, except: :index
   def index
-    @guestbook_posts = GuestbookPost.all
+    @guestbook_posts = GuestbookPost.includes(:user, :comments).all
     build_for_create
   end
 
@@ -24,6 +24,14 @@ class GuestbookController < ApplicationController
     
     #redirect_to guestbook_index_path
     render @comment
+  end
+
+  def destroy_post
+    if current_user.is_admin?
+      @post = GuestbookPost.find params[:id]
+      @post.destroy
+    end
+    redirect_to guestbook_index_path
   end
 private
   def build_for_create

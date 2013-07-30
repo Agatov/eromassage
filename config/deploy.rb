@@ -6,7 +6,7 @@ default_environment['GEM_PATH']= '/usr/local/lib/ruby/gems/1.9.1'
 
 
 set :rails_env, 'production'
-set :branch, 'master'
+set :branch, 'site_dev'
 set :application, 'eromassage'
 
 default_run_options[:pty] = true
@@ -15,7 +15,7 @@ set :repository, "git@github.com:Agatov/eromassage.git"  # Your clone URL
 set :scm, :git
 set :deploy_via, :remote_cache
 set :bundle_gemfile,  'Gemfile'
-set :deploy_to, "/apps/landings/#{application}"
+set :deploy_to, "/apps/sites/#{application}"
 set :keep_releases, 3
 set :unicorn_conf, "#{deploy_to}/shared/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/unicorn/shared/pids/unicorn.pid"
