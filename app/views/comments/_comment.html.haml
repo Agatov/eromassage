@@ -1,5 +1,5 @@
 .comment
-  = link_to '', comment_path(comment), method: :delete, remote: true, class: 'delete-link pull-right' if current_user && current_user.is_admin?
+  = link_to '', comment_path(comment), method: :delete, remote: true, class: 'delete-comment__link pull-right' if current_user && current_user.is_admin?
   .comment-image
     = image_tag comment.user.avatar_url(:thumb)
   .comment-content

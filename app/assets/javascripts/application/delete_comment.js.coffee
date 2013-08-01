@@ -1,3 +1,3 @@
 $ ->
-  $('.guestbook-post-comments').on 'click', '.delete-link', ->
+  $(document).on 'ajax:success', '.delete-comment__link', ->
     $(@).parent().hide(200)

@@ -13,6 +13,9 @@ class Comment < ActiveRecord::Base
       when :guestbook
         post_comment = GuestbookPostComment.find_by_comment_id id
         post_comment.destroy
+      when :girl
+        girl_comment = GirlComment.find_by_comment_id id
+        girl_comment.destroy
     end
   end
 end

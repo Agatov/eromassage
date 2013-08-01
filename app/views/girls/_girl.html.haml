@@ -62,6 +62,11 @@
         .comments
           = render girl.comments      
         .comment__new
-          = form_for @comment, url: girl_comments_path(girl_id: girl.id), remote: true do |f|
-            = f.text_field :message
-            = f.submit 'Отправить', class: 'btn'
+          - if @comment.present?
+            = form_for @comment, url: girl_comments_path(girl_id: girl.id), remote: true do |f|
+              = f.text_field :message
+              = f.submit 'Отправить', class: 'btn'
+          - else
+            = succeed ',' do
+              = link_to 'Войдите', new_user_session_path
+            чтобы написать
