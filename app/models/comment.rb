@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :user
 
-  as_enum :type, guestbook: 1
+  as_enum :type, guestbook: 1, girl: 2
 
   default_scope order: 'created_at ASC'
 

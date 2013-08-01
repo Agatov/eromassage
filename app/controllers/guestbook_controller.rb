@@ -1,8 +1,12 @@
 class GuestbookController < ApplicationController
   before_filter :authenticate_user!, except: :index
+  before_filter :build_for_create, only: :index
   def index
-    @guestbook_posts = GuestbookPost.includes(:user, :comments).all
-    build_for_create
+    @guestbook_posts = GuestbookPost.includes(:user, :comments).offset(get_offset).limit(20)
+
+    if request.xhr?
+      render partial: 'post', collection: @guestbook_posts
+    end
   end
 
   def create_post
@@ -33,7 +37,14 @@ class GuestbookController < ApplicationController
     end
     redirect_to guestbook_index_path
   end
+
 private
+  def get_offset
+    page = params[:page].to_i
+    page -= 1 if page > 0
+    offset = page * 20
+  end
+
   def build_for_create
     if user_signed_in?
       @guestbook_post = GuestbookPost.new

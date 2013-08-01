@@ -1,17 +1,13 @@
 class GirlCommentsController < ApplicationController
-  def index
-    @girl_comments = GirlComment.where girl_id: params[:girl_id]
-
-    render json: @girl_comments
-  end
-
+  before_filter :authenticate_user!
   def create
+    @comment = Comment.new params[:comment]
+    @comment.girl!
+    @comment.user_id = current_user.id
+
     @girl = Girl.find params[:girl_id]
-    @girl.comments.build params[:girl_comment]
-    if @girl.save
-      render json: {status: :success}
-    else
-      render json: {status: :error}
-    end
+    @girl.comments << @comment
+    
+    render @comment
   end
 end

@@ -4,10 +4,6 @@
       Девушки
       %small
         Они такие же, как и на фото.
-
-
-
-
     .girls
       - @girls.each do |girl|
         = render partial: 'girls/girl', locals: {girl: girl}

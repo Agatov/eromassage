@@ -21,8 +21,9 @@ Eromassage::Application.routes.draw do
 
   resources :orders, only: :create
 
-  resources :girls, only: :index
-  resources :girl_comments, path: 'girls/:girl_id/comments', only: [:index, :create]
+  resources :girls, only: :index do
+    resources :girl_comments, only: [:create], path: :comments, on: :collection, as: :comments
+  end
 
   resources :programs, only: :index
 

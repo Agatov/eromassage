@@ -1,6 +1,6 @@
 .guestbook-post-wrapper
   .guestbook-post
-    = link_to '', post_guestbook_index_path(post), method: :delete, class: 'delete-link pull-right' if current_user.is_admin?
+    = link_to '', post_guestbook_index_path(post), method: :delete, class: 'delete-link pull-right' if current_user && current_user.is_admin?
     .guestbook-post-content
       .guestbook-post-image
         = image_tag post.user.avatar_url(:thumb)
@@ -9,7 +9,8 @@
       .clear
     %footer
       = get_time post.created_at
-  %hr
+  - if current_user || post.comments.any?
+    %hr
   .guestbook-post-comments
     .guestbook-post-comments_list
       = render post.comments

@@ -49,14 +49,13 @@ body
 .modal
   z-index: 1001
   position: absolute
-  top: 50%
   left: 50%
 
   width: 950px
   height: 650px
 
   margin-left: -480px
-  margin-top: -300px
+  margin-top: 50px
 
   .header
     width: 100%
@@ -79,7 +78,33 @@ body
       width: 500px
       height: 550px
       display: none
-
+  .content-links
+    float: right
+    width: 375px
+    margin-right: 25px
+    a
+      color: #ef6465
+      text-decoration: none
+      &:first-child
+        float: right
+      &:last-child
+        float: left
+  .comments-wrapper
+    display: none
+    float: right
+    margin-top: 25px
+    width: 400px
+    height: 500px
+    position: relative
+    color: white
+    overflow-y: scroll
+    .comment__new
+      margin-top: 20px
+      form
+        input[type=text]
+          width: 280px
+        input[type=submit]
+          padding: 8px
   .gallery
     float: right
     margin-top: 25px

@@ -1,5 +1,6 @@
 class GirlsController < ApplicationController
   def index
-    @girls = Girl.all
+    @girls = Girl.includes(:comments).all
+    @comment = Comment.new
   end
 end

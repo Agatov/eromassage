@@ -82,6 +82,22 @@ $ ->
 
     false
 
+  # переключалка с фоток на комментарии и обратно
+  $(document).on 'click', '.content-links a', (e) ->
+    e.preventDefault()
+    type = $(@).attr 'data-type'
+    switch type
+      when 'photos'
+        $(@).closest('.content-wrapper').find('.comments-wrapper').hide()
+        $(@).closest('.content-wrapper').find('.gallery').show()
+      when 'comments'
+        $(@).closest('.content-wrapper').find('.gallery').hide()
+        $(@).closest('.content-wrapper').find('.comments-wrapper').show()
+
+  $(document).on 'ajax:success', '.modal .comment__new form', (e, data)->
+    $(@).closest('.comments-wrapper').find('.comments').append(data)
+    $(@).find('input[type=text]').val('')
+
   window.current_photo = null
 
 
