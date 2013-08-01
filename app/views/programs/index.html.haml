@@ -1,25 +1,18 @@
-%section
+%section#programs
   .wrapper
     .title
       Массажные программы
-      - if @programs.any?
+      - if Program.first.present?
         %small
-          %select(name="programs_filter[duration_cd]")
-            %option Длительность программы
-            - Program.durations.each do |duration|
-              %option{value: duration.last}
-                = t("programs.duration.#{duration.first}")
-          %select(name="programs_filter[girls_count]")
-            %option Количество девушек
-            %option{value: 1} Одна 
-            %option{value: 2} Две
-            %option{value: 3} Три 
-            %option{value: 4} Больше трех 
-          %select(name="programs_filter[price]")
-            %option Стоимость
-            %option{value: 5000} До пяти тысяч 
-            %option{value: 10000} До десяти тысяч
-            %option{value: 15000} До пятнадцати тысяч
+          = form_tag programs_path, method: :get do
+            = select_tag 'programs_filter[duration_cd]', options_from_collection_for_select(Program.duration_filter, 'value', 'title', (params[:programs_filter][:duration_cd] if params[:programs_filter].present?)), prompt: 'Длительность программы'
+            = select_tag 'programs_filter[girls_count]', options_from_collection_for_select(Program.girls_count_filter, 'value', 'title', (params[:programs_filter][:girls_count] if params[:programs_filter].present?)), prompt: 'Количество девушек'
+            = select_tag 'programs_filter[price]', options_from_collection_for_select(Program.price_filter, 'value', 'title', (params[:programs_filter][:price] if params[:programs_filter].present?)), prompt: 'Стоимость'
+            %input(type="submit" value="Применить") 
+          - if params[:programs_filter].present?
+            или
+            %form{method: :get, action: programs_path}
+              %input(type="submit" value="Сбросить") 
       - else
         %small Программы появятся в ближайшее время
     .massage-programs
