@@ -102,7 +102,8 @@ $ ->
     wrapper = $(@).closest('.comments-wrapper')
     wrapper.find('.comments').append(data)
     $(@).find('input[type=text]').val('')
-    wrapper.animate({'scrollTop': wrapper.get(0).scrollHeight}, 'slow')
+    scroll = wrapper.get(0).scrollHeight - 500
+    wrapper.animate({'scrollTop': scroll}, 'slow')
 
   $(document).on 'click', '#test', ->
     alert $('.gallery').top()
