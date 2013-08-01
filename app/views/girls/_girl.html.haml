@@ -52,7 +52,7 @@
     .content-wrapper
       .content-links
         = link_to 'Комментарии', root_path, data: {type: :comments}
-        = link_to 'Фотографии', root_path, data: {type: :photos}
+        = link_to 'Фотографии', root_path, data: {type: :photos}, class: 'active'
       .gallery.girl-gallery
         - girl.photos.each do |photo|
           .preview{photo_id: photo.id}

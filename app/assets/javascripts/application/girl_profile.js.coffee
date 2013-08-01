@@ -88,15 +88,24 @@ $ ->
     type = $(@).attr 'data-type'
     switch type
       when 'photos'
+        $(@).parent().find('a[data-type=comments]').removeClass 'active'
+        $(@).addClass 'active'
         $(@).closest('.content-wrapper').find('.comments-wrapper').hide()
         $(@).closest('.content-wrapper').find('.gallery').show()
       when 'comments'
+        $(@).parent().find('a[data-type=photos]').removeClass 'active'
+        $(@).addClass 'active'
         $(@).closest('.content-wrapper').find('.gallery').hide()
         $(@).closest('.content-wrapper').find('.comments-wrapper').show()
 
-  $(document).on 'ajax:success', '.modal .comment__new form', (e, data)->
-    $(@).closest('.comments-wrapper').find('.comments').append(data)
+  $(document).on 'ajax:success', '.modal .comment__new form', (e, data) ->
+    wrapper = $(@).closest('.comments-wrapper')
+    wrapper.find('.comments').append(data)
     $(@).find('input[type=text]').val('')
+    wrapper.animate({'scrollTop': wrapper.get(0).scrollHeight}, 'slow')
+
+  $(document).on 'click', '#test', ->
+    alert $('.gallery').top()
 
   window.current_photo = null
 
