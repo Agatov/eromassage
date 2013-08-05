@@ -40,9 +40,9 @@ module ApplicationHelper
 
   def get_time time
     if time.year == Date.today.year
-      Russian::strftime(time, "%H:%M, %d %B")
+      Russian::strftime(time, "%H:%M, %e %B")
     else
-      Russian::strftime(time, "%H:%M, %d %B %Y")
+      Russian::strftime(time, "%H:%M, %e %B %Y")
     end
   end
 end

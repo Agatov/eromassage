@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :avatar, :nickname
   # attr_protected :is_admin
 
-  mount_uploader :avatar, SimpleUploader
+  mount_uploader :avatar, UserUploader
 
   def is_admin?
     is_admin
