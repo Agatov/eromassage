@@ -8,14 +8,15 @@
       .guestbook-post-message= post.message
       .clear
     %footer
+      - unless post.comments.any?
+        %span.lets-comment Комментировать
       = get_time post.created_at
-  - if current_user || post.comments.any?
-    %hr
+  %hr
   .guestbook-post-comments
     .guestbook-post-comments_list
       = render post.comments
     - if @guestbook_comment.present? && user_signed_in?
-      .guestbook-post-comments__new
+      .guestbook-post-comments__new{style: ('display:none' unless post.comments.any?)}
         = render partial: 'new_comment', locals: {post: post, guestbook_comment: @guestbook_comment}
         
       
