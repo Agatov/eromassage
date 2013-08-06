@@ -15,7 +15,7 @@ class UserUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    'images/user.gif'
+    'user.gif'
   end
 
 end

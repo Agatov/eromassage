@@ -23,11 +23,12 @@ class GuestbookController < ApplicationController
     @comment = Comment.new params[:comment]
     @comment.user_id = current_user.id
     @comment.type_cd = Comment.guestbook
-    
-    @post.comments << @comment
-    
-    #redirect_to guestbook_index_path
-    render @comment
+    if @comment.valid?
+      @post.comments << @comment
+      render @comment
+    else
+      render json: {status: 'validation error'}, status: :unprocessable_entity
+    end
   end
 
   def destroy_post
