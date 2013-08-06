@@ -1,0 +1,22 @@
+.girl-modal{id: "girl-modal-#{girl.id}"}
+  .girl-modal-content
+    .girl-modal-title
+      = "#{girl.name}, #{girl.age.to_s} лет"
+    .girl-modal-description
+      .girl-modal-photos
+        .fotorama{data:{nav: :thumbs, fit: :cover, width: 560, height: 440, keyboard: 'true'}}
+          - girl.photos.each do |photo|
+            = link_to photo.image_url(:full) do
+              = image_tag photo.image_url(:preview)
+      .girl-modal-comments
+        .girl-modal-comments__list
+          = render girl.comments
+        .girl-modal-comments__new
+          - if @comment.present?
+            = form_for @comment, url: girl_comments_path(girl_id: girl.id), remote: true do |f|
+              = f.text_field :message, required: true, placeholder: 'Комментировать..'
+              = f.submit 'Отправить', class: 'btn'
+          - else
+            = succeed ',' do
+              = link_to 'Войдите', new_user_session_path
+            чтобы написать

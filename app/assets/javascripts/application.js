@@ -2,6 +2,7 @@
 //= require jquery-ui
 //= require application/initializer
 //= require application/order
-//= require application/girl_profile
+//= require application/girls
 //= require application/guestbook
 //= require application/delete_comment
+//= require fotorama

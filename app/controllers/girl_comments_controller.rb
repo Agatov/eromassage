@@ -6,8 +6,12 @@ class GirlCommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     @girl = Girl.find params[:girl_id]
-    @girl.comments << @comment
-    
-    render @comment
+
+    if @comment.valid?
+      @girl.comments << @comment
+      render @comment
+    else
+      render json: {status: 'validation error'}, status: :unprocessable_entity
+    end
   end
 end

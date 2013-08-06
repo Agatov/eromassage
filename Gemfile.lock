@@ -86,6 +86,9 @@ GEM
       multi_json (~> 1.0)
     flash_cookie_session (1.1.4)
       rails (~> 3.0)
+    fotoramajs (4.1.17)
+      jquery-rails (>= 2.1.0)
+      sprockets (>= 2)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -215,6 +218,7 @@ DEPENDENCIES
   devise
   execjs
   flash_cookie_session
+  fotoramajs
   haml-rails
   haml_coffee_assets
   httparty

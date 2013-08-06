@@ -1,0 +1,52 @@
+.girl-modal
+  width: 1000px
+  height: 600px
+  position: fixed
+  top: 50%
+  left: 50%
+  margin-left: -500px
+  margin-top: -260px
+  z-index: 2000
+  visibility: hidden
+  backface-visibility: hidden
+  transform: translateX(-50%) translateY(-50%)
+  .girl-modal-content
+    padding: 10px 15px 25px 15px
+    background: #fff
+    border-radius: 8px
+    .girl-modal-title
+      height: 30px
+      text-align: center
+      font-weight: 200
+      font-size: 22px
+    .girl-modal-description
+      .girl-modal-photos
+        float: left
+        width: 560px
+        overflow: hidden
+      .girl-modal-comments
+        margin-left: 600px
+        .girl-modal-comments__list
+          height: 440px
+          overflow-y: scroll
+          margin-bottom: 20px
+          .comment:first-child
+            margin-top: 0
+        .girl-modal-comments__new
+
+.girl-modal-overlay
+  position: fixed
+  width: 100%
+  height: 100%
+  visibility: hidden
+  top: 0
+  left: 0
+  z-index: 1000
+  opacity: 0
+  background: rgba(0,0,0,0.5)
+  transition: all 0.5s
+.girl-modal-show ~ .girl-modal-overlay
+  opacity: 1
+  visibility: visible
+.girl-modal-show
+  visibility: visible
