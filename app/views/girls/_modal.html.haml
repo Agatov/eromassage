@@ -1,13 +1,13 @@
 .girl-modal{id: "girl-modal-#{girl.id}"}
   .girl-modal-content
-    .girl-modal-title
-      = "#{girl.name}, #{girl.age.to_s} лет"
+    .girl-modal-photos
+      .fotorama{data:{nav: :thumbs, fit: :cover, width: 560, height: 440, keyboard: 'true'}}
+        - girl.photos.each do |photo|
+          = link_to photo.image_url(:full) do
+            = image_tag photo.image_url(:preview)
     .girl-modal-description
-      .girl-modal-photos
-        .fotorama{data:{nav: :thumbs, fit: :cover, width: 560, height: 440, keyboard: 'true'}}
-          - girl.photos.each do |photo|
-            = link_to photo.image_url(:full) do
-              = image_tag photo.image_url(:preview)
+      .girl-modal-title
+        = "#{girl.name}, #{girl.age.to_s} лет"
       .girl-modal-comments
         .girl-modal-comments__list
           = render girl.comments
@@ -20,3 +20,4 @@
             = succeed ',' do
               = link_to 'Войдите', new_user_session_path
             чтобы написать
+    .clear

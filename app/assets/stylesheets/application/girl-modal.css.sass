@@ -1,6 +1,6 @@
 .girl-modal
   width: 1000px
-  height: 600px
+  height: auto
   position: fixed
   top: 50%
   left: 50%
@@ -11,28 +11,31 @@
   backface-visibility: hidden
   transform: translateX(-50%) translateY(-50%)
   .girl-modal-content
-    padding: 10px 15px 25px 15px
+    padding: 15px
     background: #fff
     border-radius: 8px
-    .girl-modal-title
-      height: 30px
-      text-align: center
-      font-weight: 200
-      font-size: 22px
+    .girl-modal-photos
+      float: left
+      width: 560px
+      overflow: hidden
     .girl-modal-description
-      .girl-modal-photos
-        float: left
-        width: 560px
-        overflow: hidden
-      .girl-modal-comments
-        margin-left: 600px
-        .girl-modal-comments__list
-          height: 440px
-          overflow-y: scroll
-          margin-bottom: 20px
-          .comment:first-child
-            margin-top: 0
-        .girl-modal-comments__new
+      margin-left: 600px
+      .girl-modal-title
+        height: 30px
+        text-align: center
+        font-weight: 200
+        font-size: 22px
+        margin-bottom: 20px
+      .girl-modal-comments__list
+        height: 400px
+        overflow-y: scroll
+        margin-bottom: 20px
+        .comment:first-child
+          margin-top: 0
+      .girl-modal-comments__new
+        form
+          input[type=text]
+            width: 250px
 
 .girl-modal-overlay
   position: fixed

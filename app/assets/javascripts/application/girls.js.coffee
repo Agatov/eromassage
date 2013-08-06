@@ -3,7 +3,7 @@ $ ->
     wrapper = $(@).closest('.girl-modal-comments')
     wrapper.find('.girl-modal-comments__list').append(data)
     $(@).find('input[type=text]').val('')
-    scroll = wrapper.find('.girl-modal-comments__list').get(0).scrollHeight - 440
+    scroll = wrapper.find('.girl-modal-comments__list').get(0).scrollHeight - 400
     wrapper.find('.girl-modal-comments__list').animate({'scrollTop': scroll}, 'slow')
 
   
