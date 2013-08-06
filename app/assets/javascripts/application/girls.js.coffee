@@ -6,11 +6,11 @@ $ ->
     scroll = wrapper.find('.girl-modal-comments__list').get(0).scrollHeight - 400
     wrapper.find('.girl-modal-comments__list').animate({'scrollTop': scroll}, 'slow')
 
-  
   $('.girls .girl .avatar').bind 'click', ->
     girl_id = $(@).closest('.girl').attr 'data-girl-id'
     selector = '#girl-modal-' + girl_id
     $(selector).addClass 'girl-modal-show'
+    $('.girls .modals .girl-modal').show()
 
   $('.girls .modals .girl-modal-overlay').bind 'click', ->
-    $('.girls .modals .girl-modal').removeClass 'girl-modal-show'
+    $('.girls .modals .girl-modal').hide().removeClass 'girl-modal-show'
