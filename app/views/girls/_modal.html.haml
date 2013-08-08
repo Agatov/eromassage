@@ -12,7 +12,7 @@
         .girl-modal-comments__list
           = render girl.comments
         .girl-modal-comments__new
-          - if @comment.present?
+          - if user_signed_in?
             = form_for @comment, url: girl_comments_path(girl_id: girl.id), remote: true do |f|
               = f.text_field :message, required: true, placeholder: 'Комментировать..'
               = f.submit 'Отправить', class: 'btn'

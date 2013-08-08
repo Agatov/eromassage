@@ -1,0 +1,9 @@
+.post
+  %h3
+    = link_to post.title, post_path(post)
+    %small= get_time post.created_at
+  = raw post.description
+  - if params[:action] == 'index'
+    %footer
+      = link_to 'Комментарии', post_path(post)
+      = "(#{post.comments.size})" if post.comments.any?

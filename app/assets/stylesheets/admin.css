@@ -1,4 +1,5 @@
 /*
  *= require bootstrap
+ *= require lib/redactor
  *= require_tree ./admin
  */

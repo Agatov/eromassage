@@ -1,0 +1,7 @@
+.span10
+  = simple_form_for [:admin, @post], html: {class: 'form-horizontal'} do |f|
+    = f.input :title, label: 'Заголовок', input_html: {class: 'span4'}
+    = f.input :description, label: 'Сообщение', input_html: {class: 'redactor', rows: 4}
+    .form-actions.span8
+      = f.submit 'Сохранить', class: 'btn btn-primary'
+      = link_to 'Назад', admin_posts_path, class: 'btn'

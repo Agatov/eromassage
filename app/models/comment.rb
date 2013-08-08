@@ -6,18 +6,19 @@ class Comment < ActiveRecord::Base
 
   validates_presence_of :message
 
-  as_enum :type, guestbook: 1, girl: 2
+  as_enum :type, guestbook: 1, girl: 2, post: 3
 
   default_scope order: 'created_at ASC'
 
   def destroy_it
     case type
       when :guestbook
-        post_comment = GuestbookPostComment.find_by_comment_id id
-        post_comment.destroy
+        comment = GuestbookPostComment.find_by_comment_id id
       when :girl
-        girl_comment = GirlComment.find_by_comment_id id
-        girl_comment.destroy
+        comment = GirlComment.find_by_comment_id id
+      when :post
+        comment = PostComment.find_by_comment_id id
     end
+    comment.destroy if comment.present?
   end
 end

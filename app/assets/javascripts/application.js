@@ -5,4 +5,5 @@
 //= require application/girls
 //= require application/guestbook
 //= require application/delete_comment
+//= require application/posts
 //= require fotorama

@@ -4,7 +4,7 @@ $ ->
     .bind 'ajax:success', (event, data) ->
       message = $(@).find('#comment_message')
       message.removeClass('message-empty-error')
-      $(@).parent().parent().find('.guestbook-post-comments_list').append data
+      $(@).parent().parent().find('.guestbook-post-comments__list').append data
       $(@).find('#comment_message').val ''
     .bind 'ajax:error', (event, data) ->
       message = $(@).find('#comment_message')

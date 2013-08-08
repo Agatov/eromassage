@@ -10,7 +10,7 @@
   %body
     .topbar
       .wrapper
-        .logo
+        = link_to root_path, class: 'logo' do
           8 (962) 918-69-85
           %small
             %br
@@ -19,9 +19,9 @@
             Круглосуточно
 
         %ul.navigation
-          %li= link_to 'Главная', root_path, class: 'nav-link'
           %li= link_to 'Девушки', girls_path, class: 'nav-link'
           %li= link_to 'Программы', programs_path, class: 'nav-link'
+          %li= link_to 'Блог', posts_path, class: 'nav-link'
           %li= link_to 'Гостевая книга', guestbook_index_path, class: 'nav-link'
           - if user_signed_in?
             %li

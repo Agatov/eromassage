@@ -27,6 +27,10 @@ Eromassage::Application.routes.draw do
 
   resources :programs, only: :index
 
+  resources :posts, only: [:index, :show] do
+    resources :post_comments, only: [:create], path: :comments, on: :collection, as: :comments
+  end
+
   namespace :admin do
     root to: 'girls#index'
     resources :girls do
@@ -43,5 +47,6 @@ Eromassage::Application.routes.draw do
     end
 
     resources :programs, except: [:show]
+    resources :posts, except: :show
   end
 end

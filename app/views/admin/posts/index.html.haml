@@ -1,0 +1,14 @@
+%legend
+  Блог
+
+  .pull-right
+    = link_to 'Добавить', new_admin_post_path, class: 'btn'
+%table.table.table-striped
+  %thead
+    %tr
+      %th Заголовок
+      %th Дата создания
+      %th Комментарии
+      %th Действия
+  %tbody
+    = render @posts

@@ -1,0 +1,17 @@
+%section.posts-section
+  .wrapper
+    .title
+      Блог
+    .posts
+      .post-wrapper
+        = render @post
+        .post-comments
+          .post-comments-list
+            = render @post.comments
+          .post-comments-new
+            - if user_signed_in?
+              = render partial: 'new_comment', locals: {post: @post, post_comment: @post_comment}
+            - else
+              = succeed ',' do
+                = link_to 'Войдите', new_user_session_path
+              чтобы написать
