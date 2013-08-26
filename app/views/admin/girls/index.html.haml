@@ -36,3 +36,5 @@
           размер
         %td
           = link_to 'изменить', edit_admin_girl_path(girl)
+          %br
+          = link_to 'удалить', admin_girl_path(girl), method: :delete, confirm: 'Удалить!?'
