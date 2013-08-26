@@ -37,6 +37,12 @@ class Admin::PhotosController < AdminController
     end
   end
 
+  def destroy
+    photo = Photo.find(params[:id])
+    photo.destroy
+    render json: {status: :ok}
+  end
+
   private
 
   def find_girl

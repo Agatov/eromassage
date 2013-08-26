@@ -4,4 +4,4 @@
       = image_tag photo.image_url(:large) if photo.image?
 
     .slide2
-      %i.icon-remove.icon-white.remove-photo{rel: '#'}
+      %i.icon-remove.icon-white.remove-photo{rel: admin_girl_photo_path(girl.id, photo)}
