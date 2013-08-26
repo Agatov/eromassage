@@ -10,6 +10,7 @@ group :assets do
   gem 'bourbon'
   gem 'haml_coffee_assets'
   gem 'execjs'
+  gem 'jquery-rails'
 end
 
 group :development do
