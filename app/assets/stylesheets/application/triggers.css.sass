@@ -1,0 +1,64 @@
+.triggers
+  @include thumbnails_parent
+  padding: 50px 0
+
+
+
+  .trigger-container
+    float: left
+    margin-right: 20px
+    margin-bottom: 20px
+    width: 420px
+    height: 200px
+    padding: 15px
+    background: #f2f7fa
+    &:nth-child(2n)
+      margin-right: 0px
+
+
+
+
+    .trigger-header
+      @include thumbnails_parent
+
+
+      .trigger-title
+        float: left
+        padding-top: 20px
+        margin-left: 20px
+        width: 280px
+        font-size: 24px
+        line-height: 1.4
+
+      .trigger-icon
+        float: left
+        width: 100px
+        height: 100px
+        border-radius: 100px
+        background: #000
+        position: relative
+
+        .icon
+          width: 75px
+          height: 75px
+          border-radius: 75px
+          position: absolute
+          top: 13px
+          left: 13px
+
+          &.shower
+            background: url('/assets/shower.jpg') no-repeat
+
+          &.credit-card
+            background: url('/assets/credit-card.jpg') no-repeat
+
+          &.towel
+            background: url('/assets/towel.jpg') no-repeat
+
+          &.cup
+            background: url('/assets/cup.jpg') no-repeat
+
+    .trigger-desc
+      padding-top: 20px
+      font-size: 14px
+      line-height: 1.4
