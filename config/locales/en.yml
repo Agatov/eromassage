@@ -3,8 +3,7 @@
 
 en:
   hello: "Hello world"
-  site_title: 'Салон эротического массажа "Мир Массажа"'
-#  site_title: 'Как выучить C++'
+  site_title: 'Салон эротического массажа Виолет'
 
   sms:
     notification_message: "%{username} : %{phone}. %{date}"

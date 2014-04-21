@@ -33,7 +33,7 @@ $ ->
 
   $('.nav-link').bind 'click', ->
     position = $("##{$(@).attr('rel_id')}").offset().top
-    $('body').animate({scrollTop: "#{position - 25}px"}, 300)
+    $('body').animate({scrollTop: "#{position - 75}px"}, 300)
     false
 
 
