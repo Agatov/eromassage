@@ -1,119 +1,25 @@
-.overlay
-
-
-
-.modal-wrapper
-  .olo
-    .modal-close
-      %a#close-modal{href: '#'}
-        закрыть (х)
-    .modal
-
-
-.topbar
-  .wrapper
-    .logo
-      8 (962) 918-69-85
-      %small
-        %br
-        Метро Динамо.
-        &nbsp;&nbsp;&nbsp;
-        Круглосуточно
-
-    %ul.navigation
-
-      %li
-        %a.nav-link{href: '#', rel_id: 'girls'}
-          Девушки
-
-      %li
-        %a.nav-link{href: '#', rel_id: 'programs'}
-          Программы
-
-      %li
-        %a.nav-link{href: '#', rel_id: 'rooms'}
-          Интерьер
-
-      %li
-        %a.nav-link{href: '#', rel_id: 'map'}
-          Контакты
-
-      %li
-        %a.get-call{href: '#'}
-          Заказать звонок
-
-
+.padder
 #intro
   .wrapper
-    .slogan
-      Салон
-      %span.pink "Мир массажа"
+    .intro-title
+      Массажный салон
+      %span.blue Виолет
       %br
-      Приглашает вас на
+      приглашает девушек
       %br
-      %span.pink эротический массаж
+      на
+      %span.blue
+        эротический массаж
 
 
-%section
-  .wrapper
-    .title
-      Почему 90% гостей возвращаются к нам во второй раз
 
-    .triggers
-
-      .trigger-container
-        .trigger-header
-          .trigger-icon
-            .icon.shower
-          .trigger-title
-            Душевая кабина в каждой комнате
-
-        .trigger-desc
-          В каждой из наших комнат установлена душевая кабина или джакузи.
-          Таким образом вам не нужно ожидать очереди в душ.
-          У нас всегда в наличии ароматные гели для душа на выбор.
+= render partial: 'application/triggers'
 
 
-      .trigger-container
-        .trigger-header
-          .trigger-icon
-            .icon.credit-card
-          .trigger-title
-            Мы принимаем кредитные карты
-
-        .trigger-desc
-          Таким образом у вас всегда будет возможность расплатиться
-          любым удобным для вас образом.
-
-
-      .trigger-container
-        .trigger-header
-          .trigger-icon
-            .icon.towel
-          .trigger-title
-            Одноразовые полотенца и тапочки
-
-        .trigger-desc
-          Когда вы заходите к нам в салон, мы обязательно предоставим вам одноразовые тапочки.
-          А вот полотенце вы можете выбрать: одноразовое или махровое.
-
-
-      .trigger-container
-        .trigger-header
-          .trigger-icon
-            .icon.cup
-          .trigger-title
-            Чайная церемония для каждого гостя
-
-        .trigger-desc
-          У нас в коллекции более тридцати сортов чая. Также у нас
-          работает кофе-машина, так что вы можете взбодриться отличным свежесваренным эспрессо до или после массажа.
 %section#girls
   .wrapper
     .title
-      Девушки
-      %small
-        Они такие же, как и на фото.
+      Наши массажисты
 
 
 
@@ -123,90 +29,15 @@
         = render partial: 'girls/girl', locals: {girl: girl}
 
 
-%section#programs
-  .wrapper
-    .title
-      Программы и цены
+= render partial: 'application/programms'
+= render partial: 'application/faq'
 
 
-    .programs
-      .program
-        .title
-          1 час
-          .price
-            2 000
-            %small
-              рублей
-
-      .program
-        .title
-          2 часа с 2 девушками
-          .price
-            6 700
-            %small
-              рублей
-
-      .program
-        .title
-          3 часа и 3 девушки
-          .price
-            11 100
-            %small
-              рублей
-
-
-
--#%section#preferences
-  .wrapper
-    .title
-      Почему к нам возвращаются
-
-
-    .preferences
-      .preference
-        .title
-          Душевая кабина в каждой комнате
-        .content
-          В каждой из наших комнат установлена душевая кабина или джакузи. Таким образом вам не нужно ожидать очереди в душ.
-          У нас всегда в наличии ароматные гели для душа на выбор.
-      .preference
-        .title
-          Чайная церемония для каждого гостя
-        .content
-          Каждому пришедшему гостю мы устраиваем чайную церемонию. У нас в коллекции более тридцати сортов чая. Также у нас
-          работает кофе-машина, так что вы можете взбодриться отличным свежесваренным эспрессо до или после массажа.
-      .preference
-        .title
-          У наших массажисток есть дипломы
-        .content
-          у каждой из наших массажисток есть диплом о том, что она массажистка.
-
-      .preference
-        .title
-          Полотенца и тапочки
-        .content
-          Когда вы заходите к нам в салон, мы обязательно предоставим вам одноразовые тапочки. А вот полотенце вы можете выбрать:
-          однаразовое или махровое. Мы стираем наши махровые полотенца в прачечной, они всегда стерильные и вкусно пахнут.
-
-
-
-
-%section#rooms
-  .wrapper
-    .title
-      Интерьер
-      %small
-        У нас 6 комнат и каждая из них  неповторима.
-
-    .rooms
-      - @rooms.each do |room|
-        = render partial: 'rooms/room', locals: {room: room}
-
+#address
+  Волков переулок, дом 13, 13 с1
 #map
 
-
-
-#footer
+-##footer
   .wrapper
     Наши реквизиты:
     %br
@@ -219,7 +50,7 @@
     Москва, улица Степана Супруна, дом 12
 
 
-%script#balloon-template{type: :template}
+-#%script#balloon-template{type: :template}
   .balloon
     .content
       Мы находимся на м. Динамо,

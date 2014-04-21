@@ -1,5 +1,6 @@
 .girl
   .avatar
+    -#%a{href: girl_path(girl)}
     = image_tag girl.avatar_url(:preview)
   .info
     .name
@@ -14,12 +15,6 @@
         .value
           = girl.age.to_s
           лет
-      .parameter
-        .label
-          Грудь:
-        .value
-          = girl.bubs.to_s
-          размер
       .parameter
         .label
           Рост:

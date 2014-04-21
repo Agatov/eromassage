@@ -1,38 +1,63 @@
-#programs
-  background: #f2f7fa
-  border-top: 1px solid #d9dee1
-  border-bottom: 1px solid #d9dee1
-
-  .programs
-    margin-top: 50px
-    @include thumbnails_parent
-
-    .program
-
-      float: left
-      width: 300px
-      height: 300px
-      border-radius: 300px
-      margin-right: 20px
-      background: #000
-      color: #fff
-      text-align: center
+.programs
+  @include thumbnails_parent
+  padding-top: 30px
 
 
-      &:nth-child(3n)
-        margin-right: 0px
 
-      .title
-        color: #fff
-        margin-top: 60px
+  .program-container
+    float: left
+    position: relative
+    margin-right: 20px
+    margin-bottom: 20px
+    width: 420px
+    height: 250px
+    padding: 15px
+    background: #f2f7fa
+    &:nth-child(2n)
+      margin-right: 0px
+
+
+
+
+    .program-header
+      @include thumbnails_parent
+
+
+      .program-title
+        float: left
+        padding-top: 20px
+        margin-left: 20px
+        width: 280px
         font-size: 24px
+        font-family: 'Roboto-Light'
+        line-height: 1.4
+
+      .program-icon
+        float: left
+        width: 100px
+        height: 100px
+        position: relative
+
+        .icon
+          width: 100px
+          height: 100px
+          position: absolute
+
+          img
+            width: 100px
+            height: 100px
+
+    .program-desc
+      padding-top: 20px
+      font-size: 14px
+      line-height: 1.4
+      font-family: 'Roboto-Light'
 
 
-        .price
-          margin-top: 15px
-          font-size: 48px
-          color: #EC4989
-
-          small
-            font-size: 14px
-            font-weight: 200
+    .program-info
+      padding-top: 50px
+      font-size: 18px
+      font-family: 'Roboto-Regular'
+      position: absolute
+      bottom: 10px
+      left: 20px
